@@ -8,13 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="account-service" />
         <module name="gateway-point" />
-        <module name="auth-service" />
+        <module name="arma-service" />
         <module name="registry" />
+        <module name="auth-service" />
         <module name="config" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account-service" target="1.8" />
+      <module name="arma-service" target="1.8" />
       <module name="auth-service" target="1.8" />
       <module name="config" target="1.8" />
       <module name="gateway-point" target="1.8" />
@@ -25,6 +27,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="account-service" options="-parameters" />
+      <module name="arma-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="config" options="-parameters" />
       <module name="gateway-point" options="-parameters" />
