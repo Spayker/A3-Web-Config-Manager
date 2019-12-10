@@ -1,0 +1,4 @@
+com/spayker/account/service/AccountServiceTest.class
+com/spayker/account/repository/AccountRepositoryTest.class
+com/spayker/account/controller/AccountControllerTest.class
+com/spayker/account/AccountServiceApplicationTests.class

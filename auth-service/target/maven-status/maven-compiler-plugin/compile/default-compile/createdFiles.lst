@@ -1,0 +1,9 @@
+com/spayker/auth/config/OAuth2AuthorizationConfig.class
+com/spayker/auth/domain/User.class
+com/spayker/auth/service/UserServiceImpl.class
+com/spayker/auth/AuthApplication.class
+com/spayker/auth/controller/UserController.class
+com/spayker/auth/service/security/MongoUserDetailsService.class
+com/spayker/auth/service/UserService.class
+com/spayker/auth/config/WebSecurityConfig.class
+com/spayker/auth/repository/UserRepository.class

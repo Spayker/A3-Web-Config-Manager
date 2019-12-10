@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0dc29d06-c073-432b-95f7-f0c3cc244ca6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../config/src/main/resources/shared/account-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.env" beforeDir="false" afterPath="$PROJECT_DIR$/../.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spayker/account/service/security/CustomUserInfoTokenServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spayker/account/service/security/CustomUserInfoTokenServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/src/main/resources/shared/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/shared/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/src/main/resources/shared/auth-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/shared/auth-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/src/main/resources/shared/gateway-point.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/shared/gateway-point.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../registry/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../registry/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/src/main/java/com/spayker/eureka/EurekaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../registry/src/main/java/com/spayker/eureka/EurekaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../registry/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../monitoring/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../monitoring/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../monitoring/src/main/java/com/spayker/monitoring/MonitoringApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../monitoring/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/src/main/java/com/spayker/turbine/TurbineStreamServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/target/classes/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../turbine-stream-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1T12kD7lj85XJgvgIdKqswpWRPY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../piggymetrics-master" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="AccountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="account-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.spayker.account.AccountApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0dc29d06-c073-432b-95f7-f0c3cc244ca6" name="Default Changelist" comment="" />
+      <created>1572613421996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572613421996</updated>
+      <workItem from="1572613424894" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

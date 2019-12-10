@@ -1,0 +1,9 @@
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/service/UserServiceImpl.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/config/WebSecurityConfig.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/service/security/MongoUserDetailsService.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/AuthApplication.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/service/UserService.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/controller/UserController.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/config/OAuth2AuthorizationConfig.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/repository/UserRepository.java
+/home/spayker/projects/sbp_server/sbp_server/auth-service/src/main/java/com/spayker/auth/domain/User.java
