@@ -1,2 +1,0 @@
-server:
-  port: ${REGISTRY_SERVICE_DEV_PORT}

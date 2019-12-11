@@ -1,52 +1,60 @@
 version: '2.1'
 services:
 
-  config:
+#  config:
+#    environment:
+#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${CONFIG_SERVICE_DEV_DEBUG_PORT}
+#    build: config
+#    ports:
+#      - $CONFIG_SERVICE_DEV_PORT:$CONFIG_SERVICE_DEV_PORT
+#      - $CONFIG_SERVICE_DEV_DEBUG_PORT:$CONFIG_SERVICE_DEV_DEBUG_PORT
+#
+#  gateway-point:
+#    environment:
+#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${GATEWAY_SERVICE_DEV_DEBUG_PORT}
+#    build: gateway-point
+#    ports:
+#      - $GATEWAY_SERVICE_DEV_PORT:$GATEWAY_SERVICE_DEV_PORT
+#      - $GATEWAY_SERVICE_DEV_DEBUG_PORT:$GATEWAY_SERVICE_DEV_DEBUG_PORT
+#
+#  auth-service:
+#    environment:
+#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${AUTH_SERVICE_DEV_DEBUG_PORT}
+#    build: auth-service
+#    ports:
+#      - $AUTH_SERVICE_DEV_PORT:$AUTH_SERVICE_DEV_PORT
+#      - $AUTH_SERVICE_DEV_DEBUG_PORT:$AUTH_SERVICE_DEV_DEBUG_PORT
+#
+#  auth-mongodb:
+#    build: mongodb
+#    ports:
+#      - $AUTH_MONGODB_EXTERNAL_DEV_PORT:$MONGODB_SERVICE_INTERNAL_DEV_PORT
+#
+#  account-service:
+#    environment:
+#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ACCOUNT_SERVICE_DEV_DEBUG_PORT}
+#    build: account-service
+#    ports:
+#      - $ACCOUNT_SERVICE_DEV_PORT:$ACCOUNT_SERVICE_DEV_PORT
+#      - $ACCOUNT_SERVICE_DEV_DEBUG_PORT:$ACCOUNT_SERVICE_DEV_DEBUG_PORT
+#
+#  account-mongodb:
+#    build: mongodb
+#    ports:
+#      - $ACCOUNT_MONGODB_EXTERNAL_DEV_PORT:$MONGODB_SERVICE_INTERNAL_DEV_PORT
+#
+#  registry:
+#    environment:
+#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${REGISTRY_SERVICE_DEV_DEBUG_PORT}
+#    build: registry
+#    ports:
+#      - $REGISTRY_SERVICE_DEV_PORT:$REGISTRY_SERVICE_DEV_PORT
+#      - $REGISTRY_SERVICE_DEV_DEBUG_PORT:$REGISTRY_SERVICE_DEV_DEBUG_PORT
+
+  service-viewer:
     environment:
-      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${CONFIG_SERVICE_DEV_DEBUG_PORT}
-    build: config
+      - NODE_ENV=development
+    build: service-viewer
+      context: .
     ports:
-      - $CONFIG_SERVICE_DEV_PORT:$CONFIG_SERVICE_DEV_PORT
-      - $CONFIG_SERVICE_DEV_DEBUG_PORT:$CONFIG_SERVICE_DEV_DEBUG_PORT
-
-  gateway-point:
-    environment:
-      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${GATEWAY_SERVICE_DEV_DEBUG_PORT}
-    build: gateway-point
-    ports:
-      - $GATEWAY_SERVICE_DEV_PORT:$GATEWAY_SERVICE_DEV_PORT
-      - $GATEWAY_SERVICE_DEV_DEBUG_PORT:$GATEWAY_SERVICE_DEV_DEBUG_PORT
-
-  auth-service:
-    environment:
-      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${AUTH_SERVICE_DEV_DEBUG_PORT}
-    build: auth-service
-    ports:
-      - $AUTH_SERVICE_DEV_PORT:$AUTH_SERVICE_DEV_PORT
-      - $AUTH_SERVICE_DEV_DEBUG_PORT:$AUTH_SERVICE_DEV_DEBUG_PORT
-
-  auth-mongodb:
-    build: mongodb
-    ports:
-      - $AUTH_MONGODB_EXTERNAL_DEV_PORT:$MONGODB_SERVICE_INTERNAL_DEV_PORT
-
-  account-service:
-    environment:
-      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ACCOUNT_SERVICE_DEV_DEBUG_PORT}
-    build: account-service
-    ports:
-      - $ACCOUNT_SERVICE_DEV_PORT:$ACCOUNT_SERVICE_DEV_PORT
-      - $ACCOUNT_SERVICE_DEV_DEBUG_PORT:$ACCOUNT_SERVICE_DEV_DEBUG_PORT
-
-  account-mongodb:
-    build: mongodb
-    ports:
-      - $ACCOUNT_MONGODB_EXTERNAL_DEV_PORT:$MONGODB_SERVICE_INTERNAL_DEV_PORT
-
-  registry:
-    environment:
-      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${REGISTRY_SERVICE_DEV_DEBUG_PORT}
-    build: registry
-    ports:
-      - $REGISTRY_SERVICE_DEV_PORT:$REGISTRY_SERVICE_DEV_PORT
-      - $REGISTRY_SERVICE_DEV_DEBUG_PORT:$REGISTRY_SERVICE_DEV_DEBUG_PORT
+      - 3001:3000
