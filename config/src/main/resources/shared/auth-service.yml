@@ -2,7 +2,7 @@ spring:
   data:
     datasource:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://user-auth-mysqld:${DEFAULT_MYSQL_DB_PORT}/spring_social?useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+      url: jdbc:mysql://auth-mysqld:${DEFAULT_MYSQL_DB_PORT}/spring_social?useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
       username: a3user
       password: qwerty
       jpa:
