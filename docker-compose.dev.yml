@@ -28,7 +28,7 @@ services:
   auth-mongodb:
     build: mongodb
     ports:
-      - $AUTH_MONGODB_EXTERNAL_DEV_PORT:$MONGODB_SERVICE_INTERNAL_DEV_PORT
+      - $AUTH_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
 
   account-service:
     environment:
@@ -41,7 +41,7 @@ services:
   account-mongodb:
     build: mongodb
     ports:
-      - $ACCOUNT_MONGODB_EXTERNAL_DEV_PORT:$MONGODB_SERVICE_INTERNAL_DEV_PORT
+      - $ACCOUNT_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
 
   arma-service:
     environment:
@@ -54,7 +54,7 @@ services:
   arma-mongodb:
     build: mongodb
     ports:
-      - $ARMA_MONGODB_EXTERNAL_DEV_PORT:$MONGODB_SERVICE_INTERNAL_DEV_PORT
+      - $ARMA_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
 
   registry:
     environment:

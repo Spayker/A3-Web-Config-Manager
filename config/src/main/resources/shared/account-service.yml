@@ -12,9 +12,9 @@ spring:
     mongodb:
       host: account-mongodb
       username: user
-      password: ${MONGODB_PASSWORD}
+      password: ${MYSQLDB_PASSWORD}
       database: mservicet
-      port: ${MONGODB_SERVICE_INTERNAL_DEV_PORT}
+      port: ${MYSQLDB_SERVICE_INTERNAL_DEV_PORT}
 
 server:
   servlet:

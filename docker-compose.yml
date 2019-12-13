@@ -52,9 +52,9 @@ services:
       CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
       ACCOUNT_SERVICE_PASSWORD:             $ACCOUNT_SERVICE_PASSWORD
       AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
-      MONGODB_PASSWORD:                     $MONGODB_PASSWORD
+      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
       REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
-      MONGODB_SERVICE_INTERNAL_DEV_PORT:    $MONGODB_SERVICE_INTERNAL_DEV_PORT
+      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
     image: mservicet-auth-service
     restart: always
     depends_on:
@@ -67,7 +67,7 @@ services:
 
   auth-mongodb:
     environment:
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
     image: mservicet-mongodb
     restart: always
     logging:
@@ -80,10 +80,10 @@ services:
       CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
       CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
       ACCOUNT_SERVICE_PASSWORD:             $ACCOUNT_SERVICE_PASSWORD
-      MONGODB_PASSWORD:                     $MONGODB_PASSWORD
+      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
       ACCOUNT_SERVICE_DEV_PORT:             $ACCOUNT_SERVICE_DEV_PORT
       AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
-      MONGODB_SERVICE_INTERNAL_DEV_PORT:    $MONGODB_SERVICE_INTERNAL_DEV_PORT
+      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
       REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
     image: mservicet-account-service
     restart: always
@@ -98,7 +98,7 @@ services:
   account-mongodb:
     environment:
       INIT_DUMP: account-service-dump.js
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
     image: mservicet-mongodb
     restart: always
     logging:
@@ -111,10 +111,10 @@ services:
       CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
       CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
       ARMA_SERVICE_PASSWORD:                $ARMA_SERVICE_PASSWORD
-      MONGODB_PASSWORD:                     $MONGODB_PASSWORD
+      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
       ARMA_SERVICE_DEV_PORT:                $ARMA_SERVICE_DEV_PORT
       AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
-      MONGODB_SERVICE_INTERNAL_DEV_PORT:    $MONGODB_SERVICE_INTERNAL_DEV_PORT
+      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
       REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
     image: mservicet-arma-service
     restart: always
@@ -128,8 +128,8 @@ services:
 
   arma-mongodb:
     environment:
-      INIT_DUMP: account-service-dump.js
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      INIT_DUMP: arma-service-dump.js
+      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
     image: mservicet-mongodb
     restart: always
     logging:
