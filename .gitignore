@@ -29,3 +29,10 @@ config/target
 gateway-point/target
 registry/target
 
+account-service/account-service.iml
+arma-service/arma-service.iml
+auth-service/auth-service.iml
+config/config.iml
+gateway-point/gateway-point.iml
+mservicet.iml
+registry/registry.iml
