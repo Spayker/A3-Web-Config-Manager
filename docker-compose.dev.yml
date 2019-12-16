@@ -4,15 +4,23 @@ services:
   config:
     environment:
       JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${CONFIG_SERVICE_DEV_DEBUG_PORT}
-    build: mservicet-config
+    build: config
     ports:
       - $CONFIG_SERVICE_DEV_PORT:$CONFIG_SERVICE_DEV_PORT
       - $CONFIG_SERVICE_DEV_DEBUG_PORT:$CONFIG_SERVICE_DEV_DEBUG_PORT
 
+  registry:
+    environment:
+      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${REGISTRY_SERVICE_DEV_DEBUG_PORT}
+    build: registry
+    ports:
+    - $REGISTRY_SERVICE_DEV_PORT:$REGISTRY_SERVICE_DEV_PORT
+    - $REGISTRY_SERVICE_DEV_DEBUG_PORT:$REGISTRY_SERVICE_DEV_DEBUG_PORT
+
   gateway-point:
     environment:
       JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${GATEWAY_SERVICE_DEV_DEBUG_PORT}
-    build: mservicet-gateway-point
+    build: gateway-point
     ports:
       - $GATEWAY_SERVICE_DEV_PORT:$GATEWAY_SERVICE_DEV_PORT
       - $GATEWAY_SERVICE_DEV_DEBUG_PORT:$GATEWAY_SERVICE_DEV_DEBUG_PORT
@@ -20,13 +28,13 @@ services:
   auth-service:
     environment:
       JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${AUTH_SERVICE_DEV_DEBUG_PORT}
-    build: mservicet-auth-service
+    build: auth-service
     ports:
       - $AUTH_SERVICE_DEV_PORT:$AUTH_SERVICE_DEV_PORT
       - $AUTH_SERVICE_DEV_DEBUG_PORT:$AUTH_SERVICE_DEV_DEBUG_PORT
 
   auth-mysqld:
-    build: mservicet-auth-mysqld
+    build: mysqld
     ports:
       - $AUTH_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
 
@@ -56,13 +64,6 @@ services:
 #    ports:
 #      - $ARMA_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
 #
-#  registry:
-#    environment:
-#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${REGISTRY_SERVICE_DEV_DEBUG_PORT}
-#    build: mservicet-registry
-#    ports:
-#      - $REGISTRY_SERVICE_DEV_PORT:$REGISTRY_SERVICE_DEV_PORT
-#      - $REGISTRY_SERVICE_DEV_DEBUG_PORT:$REGISTRY_SERVICE_DEV_DEBUG_PORT
 #
 #  service-viewer:
 #    environment:

@@ -92,7 +92,7 @@ services:
 #        max-size: "10m"
 #        max-file: "10"
 #
-#  account-mongodb:
+#  account-mysqld:
 #    environment:
 #      INIT_DUMP: account-service-dump.js
 #      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
@@ -123,7 +123,7 @@ services:
 #        max-size: "10m"
 #        max-file: "10"
 #
-#  arma-mongodb:
+#  arma-mysqld:
 #    environment:
 #      INIT_DUMP: arma-service-dump.js
 #      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD

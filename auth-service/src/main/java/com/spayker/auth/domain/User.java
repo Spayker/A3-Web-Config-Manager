@@ -1,16 +1,19 @@
 package com.spayker.auth.domain;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.*;
 import java.util.List;
 
-@Document(collection = "users")
+//@Document(collection = "users")
+@Entity
+@Table(name = "User", uniqueConstraints = @UniqueConstraint(columnNames = {"userName"}, name = "USER_UNIQUE_USERNAME"))
 public class User implements UserDetails {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", columnDefinition = "bigint unsigned")
 	private String username;
 
 	private String password;
