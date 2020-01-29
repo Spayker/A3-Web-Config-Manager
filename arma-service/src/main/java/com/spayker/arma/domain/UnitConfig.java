@@ -1,20 +1,22 @@
 package com.spayker.arma.domain;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Document(collection = "unit_configs")
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "unitConfig")
 public class UnitConfig {
 
 	@Id
-	private String name;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private long id;
 
-	private Date lastSeen;
+	private String name;
 
 	@Length(min = 0, max = 20_000)
 	private String note;
@@ -25,14 +27,6 @@ public class UnitConfig {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Date getLastSeen() {
-		return lastSeen;
-	}
-
-	public void setLastSeen(Date lastSeen) {
-		this.lastSeen = lastSeen;
 	}
 
 	public String getNote() {

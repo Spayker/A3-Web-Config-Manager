@@ -56,7 +56,6 @@ public class ArmatServiceTest {
 		UnitConfig unitConfig = unitConfigService.create(user);
 
 		assertEquals(user.getUsername(), unitConfig.getName());
-		assertNotNull(unitConfig.getLastSeen());
 
 		verify(authClient, times(1)).createUser(user);
 		verify(repository, times(1)).save(unitConfig);
@@ -75,7 +74,6 @@ public class ArmatServiceTest {
 		unitConfigService.saveChanges("test", update);
 
 		assertEquals(update.getNote(), account.getNote());
-		assertNotNull(account.getLastSeen());
 		
 		verify(repository, times(1)).save(account);
 	}

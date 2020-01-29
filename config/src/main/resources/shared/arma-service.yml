@@ -8,23 +8,19 @@ security:
       scope: server
 
 spring:
-  datasource.url: jdbc:mysql://arma-mysqld:${DEFAULT_MYSQL_DB_PORT}/arma_db?createDatabaseIfNotExist=true&useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-  datasource.username: a3user
-  datasource.password: wasp
   datasource:
-    hikari:
-      connection-timeout: "20000"
-      minimum-idle: "5"
-      maximum-pool-size: "12"
-      idle-timeout: "300000"
-      max-lifetime: "1200000"
-  jpa:
-    properties.hibernate:
-      id.new_generator_mappings: "false"
-      format_sql: "true"
-    show-sql: "true"
-    hibernate:
-      ddl-auto: update
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://arma-mysqld:${DEFAULT_MYSQL_DB_PORT}/armaDB?useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: root
+    password: qwerty
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: create
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 server:
   servlet:

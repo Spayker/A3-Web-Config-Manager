@@ -76,7 +76,6 @@ public class ArmaControllerTest {
 		final UnitConfig unitConfig = new UnitConfig();
 		unitConfig.setName("test");
 		unitConfig.setNote("test note");
-		unitConfig.setLastSeen(new Date());
 
 		String json = mapper.writeValueAsString(unitConfig);
 

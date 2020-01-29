@@ -33,30 +33,28 @@ public class ArmaServiceImpl implements ArmaService {
 	public UnitConfig create(User user) {
 
 		UnitConfig existing = repository.findByName(user.getUsername());
-		Assert.isNull(existing, "account already exists: " + user.getUsername());
+		Assert.isNull(existing, "unit config already exists: " + user.getUsername());
 
 		authClient.createUser(user);
-		UnitConfig account = new UnitConfig();
-		account.setName(user.getUsername());
-		account.setLastSeen(new Date());
+		UnitConfig unitConfig = new UnitConfig();
+		unitConfig.setName(user.getUsername());
 
-		repository.save(account);
+		repository.save(unitConfig);
 
-		log.info("new account has been created: " + account.getName());
+		log.info("new unit config has been created: " + unitConfig.getName());
 
-		return account;
+		return unitConfig;
 	}
 
 	@Override
 	public void saveChanges(String name, UnitConfig update) {
 
 		UnitConfig unitConfig = repository.findByName(name);
-		Assert.notNull(unitConfig, "can't find account with name " + name);
+		Assert.notNull(unitConfig, "can't find unit config with name " + name);
 
 		unitConfig.setNote(update.getNote());
-		unitConfig.setLastSeen(new Date());
 		repository.save(unitConfig);
 
-		log.debug("device {} changes has been saved", name);
+		log.debug("unit config {} changes has been saved", name);
 	}
 }

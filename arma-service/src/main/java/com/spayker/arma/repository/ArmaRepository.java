@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ArmaRepository extends CrudRepository<UnitConfig, String> {
+public interface ArmaRepository extends CrudRepository<UnitConfig, Long> {
 
 	UnitConfig findByName(String name);
 
