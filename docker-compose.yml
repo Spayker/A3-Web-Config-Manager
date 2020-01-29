@@ -29,22 +29,22 @@ services:
         max-size: "10m"
         max-file: "10"
 
-  gateway-point:
-    environment:
-      CONFIG_SERVICE_PASSWORD:    $CONFIG_SERVICE_PASSWORD
-      CONFIG_SERVICE_DEV_PORT:    $CONFIG_SERVICE_DEV_PORT
-      REGISTRY_SERVICE_DEV_PORT:  $REGISTRY_SERVICE_DEV_PORT
-      AUTH_SERVICE_DEV_PORT:      $AUTH_SERVICE_DEV_PORT
-      GATEWAY_SERVICE_DEV_PORT:   $GATEWAY_SERVICE_DEV_PORT
-    image: mservicet-gateway-point
-    restart: always
-    depends_on:
-      config:
-        condition: service_healthy
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+#  gateway-point:
+#    environment:
+#      CONFIG_SERVICE_PASSWORD:    $CONFIG_SERVICE_PASSWORD
+#      CONFIG_SERVICE_DEV_PORT:    $CONFIG_SERVICE_DEV_PORT
+#      REGISTRY_SERVICE_DEV_PORT:  $REGISTRY_SERVICE_DEV_PORT
+#      AUTH_SERVICE_DEV_PORT:      $AUTH_SERVICE_DEV_PORT
+#      GATEWAY_SERVICE_DEV_PORT:   $GATEWAY_SERVICE_DEV_PORT
+#    image: mservicet-gateway-point
+#    restart: always
+#    depends_on:
+#      config:
+#        condition: service_healthy
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
 
   auth-service:
     environment:
@@ -55,6 +55,7 @@ services:
       MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
       REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
       MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
+      DEFAULT_MYSQL_DB_PORT:                $DEFAULT_MYSQL_DB_PORT
     image: mservicet-auth-service
     restart: always
     depends_on:
@@ -69,78 +70,78 @@ services:
     image: mservicet-auth-mysqld
     environment:
       MYSQL_DATABASE: spring_social
-      MYSQL_ROOT_PASSWORD: a3user
+      MYSQL_ROOT_PASSWORD: qwerty
     restart: always
 
-  account-service:
-    environment:
-      CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
-      CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
-      ACCOUNT_SERVICE_PASSWORD:             $ACCOUNT_SERVICE_PASSWORD
-      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
-      ACCOUNT_SERVICE_DEV_PORT:             $ACCOUNT_SERVICE_DEV_PORT
-      AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
-      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
-      REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
-    image: mservicet-account-service
-    restart: always
-    depends_on:
-      config:
-        condition: service_healthy
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
-
-  account-mysqld:
-    environment:
-      INIT_DUMP: account-service-dump.js
-      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
-    image: mservicet-mongodb
-    restart: always
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
-
-  arma-service:
-    environment:
-      CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
-      CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
-      ARMA_SERVICE_PASSWORD:                $ARMA_SERVICE_PASSWORD
-      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
-      ARMA_SERVICE_DEV_PORT:                $ARMA_SERVICE_DEV_PORT
-      AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
-      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
-      REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
-    image: mservicet-arma-service
-    restart: always
-    depends_on:
-      config:
-        condition: service_healthy
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
-
-  arma-mysqld:
-    environment:
-      INIT_DUMP: arma-service-dump.js
-      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
-    image: mservicet-mongodb
-    restart: always
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
-
-  service-viewer:
-    image: mservicet-service-viewer
-    restart: always
-    volumes:
-      - '.:/app'
-      - '/app/node_modules'
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+#  account-service:
+#    environment:
+#      CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
+#      CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
+#      ACCOUNT_SERVICE_PASSWORD:             $ACCOUNT_SERVICE_PASSWORD
+#      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
+#      ACCOUNT_SERVICE_DEV_PORT:             $ACCOUNT_SERVICE_DEV_PORT
+#      AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
+#      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
+#      REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
+#    image: mservicet-account-service
+#    restart: always
+#    depends_on:
+#      config:
+#        condition: service_healthy
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#
+#  account-mysqld:
+#    environment:
+#      INIT_DUMP: account-service-dump.js
+#      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
+#    image: mservicet-mongodb
+#    restart: always
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#
+#  arma-service:
+#    environment:
+#      CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
+#      CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
+#      ARMA_SERVICE_PASSWORD:                $ARMA_SERVICE_PASSWORD
+#      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
+#      ARMA_SERVICE_DEV_PORT:                $ARMA_SERVICE_DEV_PORT
+#      AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
+#      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
+#      REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
+#    image: mservicet-arma-service
+#    restart: always
+#    depends_on:
+#      config:
+#        condition: service_healthy
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#
+#  arma-mysqld:
+#    environment:
+#      INIT_DUMP: arma-service-dump.js
+#      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
+#    image: mservicet-mongodb
+#    restart: always
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#
+#  service-viewer:
+#    image: mservicet-service-viewer
+#    restart: always
+#    volumes:
+#      - '.:/app'
+#      - '/app/node_modules'
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"

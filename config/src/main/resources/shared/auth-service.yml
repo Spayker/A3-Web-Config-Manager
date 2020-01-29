@@ -1,14 +1,17 @@
 spring:
-  data:
-    datasource:
-      driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://auth-mysqld:${DEFAULT_MYSQL_DB_PORT}/spring_social?useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-      username: a3user
-      password: qwerty
-      jpa:
-        hibernate.ddl-auto: update
-        generate-ddl: true
-        show-sql: true
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://auth-mysqld:${DEFAULT_MYSQL_DB_PORT}/spring_social?useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: root
+    password: qwerty
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 server:
   servlet:
