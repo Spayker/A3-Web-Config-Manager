@@ -8,13 +8,19 @@ security:
       scope: server
 
 spring:
-  data:
-    mongodb:
-      host: account-mongodb
-      username: user
-      password: ${MYSQLDB_PASSWORD}
-      database: mservicet
-      port: ${MYSQLDB_SERVICE_INTERNAL_DEV_PORT}
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://account-mysqld:${DEFAULT_MYSQL_DB_PORT}/accountDB?useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: root
+    password: qwerty
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: create
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 server:
   servlet:
