@@ -73,37 +73,38 @@ services:
       MYSQL_ROOT_PASSWORD: qwerty
     restart: always
 
-#  account-service:
-#    environment:
-#      CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
-#      CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
-#      ACCOUNT_SERVICE_PASSWORD:             $ACCOUNT_SERVICE_PASSWORD
-#      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
-#      ACCOUNT_SERVICE_DEV_PORT:             $ACCOUNT_SERVICE_DEV_PORT
-#      AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
-#      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
-#      REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
-#    image: mservicet-account-service
-#    restart: always
-#    depends_on:
-#      config:
-#        condition: service_healthy
-#    logging:
-#      options:
-#        max-size: "10m"
-#        max-file: "10"
-#
-#  account-mysqld:
-#    environment:
-#      INIT_DUMP: account-service-dump.js
-#      MYSQLDB_PASSWORD: $MYSQLDB_PASSWORD
-#    image: mservicet-mongodb
-#    restart: always
-#    logging:
-#      options:
-#        max-size: "10m"
-#        max-file: "10"
-#
+  account-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD
+      CONFIG_SERVICE_DEV_PORT:              $CONFIG_SERVICE_DEV_PORT
+      ACCOUNT_SERVICE_PASSWORD:             $ACCOUNT_SERVICE_PASSWORD
+      MYSQLDB_PASSWORD:                     $MYSQLDB_PASSWORD
+      ACCOUNT_SERVICE_DEV_PORT:             $ACCOUNT_SERVICE_DEV_PORT
+      AUTH_SERVICE_DEV_PORT:                $AUTH_SERVICE_DEV_PORT
+      MYSQLDB_SERVICE_INTERNAL_DEV_PORT:    $MYSQLDB_SERVICE_INTERNAL_DEV_PORT
+      REGISTRY_SERVICE_DEV_PORT:            $REGISTRY_SERVICE_DEV_PORT
+      DEFAULT_MYSQL_DB_PORT:                $DEFAULT_MYSQL_DB_PORT
+    image: mservicet-account-service
+    restart: always
+    depends_on:
+      config:
+        condition: service_healthy
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  account-mysqld:
+    environment:
+      MYSQL_DATABASE: accountDB
+      MYSQL_ROOT_PASSWORD: qwerty
+    image: mservicet-mysqld
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
 #  arma-service:
 #    environment:
 #      CONFIG_SERVICE_PASSWORD:              $CONFIG_SERVICE_PASSWORD

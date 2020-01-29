@@ -38,19 +38,19 @@ services:
     ports:
       - $AUTH_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
 
-#  account-service:
-#    environment:
-#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ACCOUNT_SERVICE_DEV_DEBUG_PORT}
-#    build: account-service
-#    ports:
-#      - $ACCOUNT_SERVICE_DEV_PORT:$ACCOUNT_SERVICE_DEV_PORT
-#      - $ACCOUNT_SERVICE_DEV_DEBUG_PORT:$ACCOUNT_SERVICE_DEV_DEBUG_PORT
-#
-#  account-mongodb:
-#    build: mongodb
-#    ports:
-#      - $ACCOUNT_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
-#
+  account-service:
+    environment:
+      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ACCOUNT_SERVICE_DEV_DEBUG_PORT}
+    build: account-service
+    ports:
+      - $ACCOUNT_SERVICE_DEV_PORT:$ACCOUNT_SERVICE_DEV_PORT
+      - $ACCOUNT_SERVICE_DEV_DEBUG_PORT:$ACCOUNT_SERVICE_DEV_DEBUG_PORT
+
+  account-mysqld:
+    build: mysqld
+    ports:
+      - $ACCOUNT_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
+
 #  arma-service:
 #    environment:
 #      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ARMA_SERVICE_DEV_DEBUG_PORT}
