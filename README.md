@@ -1,1 +1,1 @@
-# A3-Web-Config-MAnager
+# A3-Web-Config-Manager

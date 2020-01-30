@@ -51,20 +51,19 @@ services:
     ports:
       - $ACCOUNT_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
 
-#  arma-service:
-#    environment:
-#      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ARMA_SERVICE_DEV_DEBUG_PORT}
-#    build: mservicet-arma-service
-#    ports:
-#      - $ARMA_SERVICE_DEV_PORT:$ARMA_SERVICE_DEV_PORT
-#      - $ARMA_SERVICE_DEV_DEBUG_PORT:$ARMA_SERVICE_DEV_DEBUG_PORT
-#
-#  arma-mongodb:
-#    build: mongodb
-#    ports:
-#      - $ARMA_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
-#
-#
+  arma-service:
+    environment:
+      JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ARMA_SERVICE_DEV_DEBUG_PORT}
+    build: mservicet-arma-service
+    ports:
+      - $ARMA_SERVICE_DEV_PORT:$ARMA_SERVICE_DEV_PORT
+      - $ARMA_SERVICE_DEV_DEBUG_PORT:$ARMA_SERVICE_DEV_DEBUG_PORT
+
+  arma-mysqld:
+    build: mysqld
+    ports:
+      - $ARMA_MYSQLDB_EXTERNAL_DEV_PORT:$MYSQLDB_SERVICE_INTERNAL_DEV_PORT
+
 #  service-viewer:
 #    environment:
 #      - NODE_ENV=development
