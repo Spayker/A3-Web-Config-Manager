@@ -1,9 +1,9 @@
-package com.spayker.arma.controller;
+package com.spayker.account.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spayker.arma.domain.Account;
-import com.spayker.arma.domain.User;
-import com.spayker.arma.service.AccountService;
+import com.spayker.account.domain.Account;
+import com.spayker.account.domain.User;
+import com.spayker.account.service.AccountService;
 import com.sun.security.auth.UserPrincipal;
 import org.junit.Before;
 import org.junit.Test;

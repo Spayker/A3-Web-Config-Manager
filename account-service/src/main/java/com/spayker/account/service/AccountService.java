@@ -1,7 +1,7 @@
-package com.spayker.arma.service;
+package com.spayker.account.service;
 
-import com.spayker.arma.domain.Account;
-import com.spayker.arma.domain.User;
+import com.spayker.account.domain.Account;
+import com.spayker.account.domain.User;
 
 public interface AccountService {
 

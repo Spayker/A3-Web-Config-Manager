@@ -1,4 +1,4 @@
-package com.spayker.arma;
+package com.spayker.account;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

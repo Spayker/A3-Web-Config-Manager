@@ -1,8 +1,8 @@
-package com.spayker.arma.controller;
+package com.spayker.account.controller;
 
-import com.spayker.arma.domain.Account;
-import com.spayker.arma.domain.User;
-import com.spayker.arma.service.AccountService;
+import com.spayker.account.domain.Account;
+import com.spayker.account.domain.User;
+import com.spayker.account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

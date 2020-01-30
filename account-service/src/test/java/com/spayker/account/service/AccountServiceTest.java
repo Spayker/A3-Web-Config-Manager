@@ -1,9 +1,9 @@
-package com.spayker.arma.service;
+package com.spayker.account.service;
 
-import com.spayker.arma.client.AuthServiceClient;
-import com.spayker.arma.domain.Account;
-import com.spayker.arma.domain.User;
-import com.spayker.arma.repository.AccountRepository;
+import com.spayker.account.client.AuthServiceClient;
+import com.spayker.account.domain.Account;
+import com.spayker.account.domain.User;
+import com.spayker.account.repository.AccountRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;

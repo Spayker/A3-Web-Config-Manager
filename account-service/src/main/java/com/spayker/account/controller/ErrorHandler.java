@@ -1,4 +1,4 @@
-package com.spayker.arma.controller;
+package com.spayker.account.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

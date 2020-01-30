@@ -1,4 +1,4 @@
-package com.spayker.arma.service.security;
+package com.spayker.account.service.security;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
