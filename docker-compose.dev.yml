@@ -67,6 +67,7 @@ services:
   service-viewer:
     environment:
       - NODE_ENV=development
-    build: mservicet-service-viewer
+    build: service-viewer
+      context: ./
     ports:
       - 3001:3000
