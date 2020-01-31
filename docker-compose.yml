@@ -137,13 +137,13 @@ services:
         max-size: "10m"
         max-file: "10"
 
-#  service-viewer:
-#    image: mservicet-service-viewer
-#    restart: always
-#    volumes:
-#      - '.:/app'
-#      - '/app/node_modules'
-#    logging:
-#      options:
-#        max-size: "10m"
-#        max-file: "10"
+  service-viewer:
+    image: mservicet-service-viewer
+    restart: always
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
