@@ -36,3 +36,5 @@ config/config.iml
 gateway-point/gateway-point.iml
 mservicet.iml
 registry/registry.iml
+service-viewer/node_modules
+service-viewer/package-lock.json

@@ -1,0 +1,16 @@
+.rowC {
+    padding-top:        10px;
+    display:            flex; 
+    flex-direction:     row;
+    align-self:         flex-end;
+    justify-content:    space-between;
+}
+
+.infobar {
+    background-color:    whitesmoke;    
+}
+
+.sorting {
+    margin-left: 15px;
+    margin-right: 15px;
+}
