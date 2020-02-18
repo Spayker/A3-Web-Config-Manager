@@ -1,4 +1,4 @@
-version: '2.1'
+version: '3.7'
 services:
 
   config:
@@ -138,12 +138,8 @@ services:
         max-file: "10"
 
   service-viewer:
-    image: mservicet-service-viewer
-    restart: always
-    volumes:
-      - '.:/app'
-      - '/app/node_modules'
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+    container_name: service-viewer
+    build:
+      context: service-viewer
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app

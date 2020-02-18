@@ -1,4 +1,4 @@
-version: '2.1'
+version: '3.7'
 services:
 
   config:
@@ -67,7 +67,5 @@ services:
   service-viewer:
     environment:
       - NODE_ENV=development
-    build: service-viewer
-      context: ./
     ports:
       - 3001:3000

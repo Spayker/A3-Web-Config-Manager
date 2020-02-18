@@ -1,7 +1,7 @@
 {
-  "name": "netflix_movie_searcher",
+  "name": "service-viewer",
   "version": "1.0.0",
-  "description": "netflix_movie_searcher",
+  "description": "service-viewer",
   "main": "./index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
