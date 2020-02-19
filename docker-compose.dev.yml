@@ -54,7 +54,7 @@ services:
   arma-service:
     environment:
       JAVA_TOOL_OPTIONS: ${JAVA_TOOL_OPTIONS}${ARMA_SERVICE_DEV_DEBUG_PORT}
-    build: mservicet-arma-service
+    build: arma-service
     ports:
       - $ARMA_SERVICE_DEV_PORT:$ARMA_SERVICE_DEV_PORT
       - $ARMA_SERVICE_DEV_DEBUG_PORT:$ARMA_SERVICE_DEV_DEBUG_PORT
