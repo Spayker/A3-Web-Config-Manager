@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Spayker/A3-Web-Config-Manager/blob/master/LICENSE)
+
 # A3-Web-Config-Manager
 
 Web config manager was born from an idea to influence a virtual world from a real one. The idea itself is not new originally
@@ -22,9 +24,3 @@ Not yet ready
 
 ## License
 MIT
-
-
-
-
-
-
