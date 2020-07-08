@@ -6,7 +6,7 @@ a typical game on a new level.
 
 The concept has one purpose: to prove a theory when real world data can change ingame experience of each player. 
 
-Trello board: 
+Trello board: https://trello.com/b/xGp7I8bx/a3-web-configurator
 
 ## Description
 Not yet ready
