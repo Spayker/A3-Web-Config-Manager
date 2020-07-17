@@ -66,6 +66,13 @@ public class CustomUserInfoTokenServices implements ResourceServerTokenServices 
 		this.authoritiesExtractor = authoritiesExtractor;
 	}
 
+	/**
+	 *  An overridden method to load the credentials for the specified access token.
+	 *  @param accessToken - provided String value which represents token
+	 *  @return OAuth2Authentication - authentication for the access token.
+	 *  @throws AuthenticationException if the access token is expired
+	 *  @throws InvalidTokenException if the token isn't valid
+	 **/
 	@Override
 	public OAuth2Authentication loadAuthentication(String accessToken)
 			throws AuthenticationException, InvalidTokenException {
@@ -77,6 +84,11 @@ public class CustomUserInfoTokenServices implements ResourceServerTokenServices 
 		return extractAuthentication(map);
 	}
 
+	/**
+	 *  Returns  OAuth2Authentication instance created by OAuth2Request and UsernamePasswordAuthenticationToken objects.
+	 *  @param map - container with principal and request data inside
+	 *  @return OAuth2Authentication - authentication for the access token.
+	 **/
 	private OAuth2Authentication extractAuthentication(Map<String, Object> map) {
 		Object principal = getPrincipal(map);
 		OAuth2Request request = getRequest(map);
@@ -87,6 +99,11 @@ public class CustomUserInfoTokenServices implements ResourceServerTokenServices 
 		return new OAuth2Authentication(request, token);
 	}
 
+	/**
+	 *  Extracts Principal object from map container by PRINCIPAL key.
+	 *  @param map - container with principal and request data inside
+	 *  @return - found principal instance or unknown string
+	 **/
 	private Object getPrincipal(Map<String, Object> map) {
 		for (String key : PRINCIPAL_KEYS) {
 			if (map.containsKey(key)) {
@@ -96,23 +113,39 @@ public class CustomUserInfoTokenServices implements ResourceServerTokenServices 
 		return "unknown";
 	}
 
+	/**
+	 *  Creates and returns OAuth2Request instance by provided Map data container.
+	 *  @param map - container with principal and request data inside
+	 *  @return OAuth2Request instance
+	 **/
 	@SuppressWarnings({ "unchecked" })
 	private OAuth2Request getRequest(Map<String, Object> map) {
 		Map<String, Object> request = (Map<String, Object>) map.get("oauth2Request");
 
 		String clientId = (String) request.get("clientId");
 		Set<String> scope = new LinkedHashSet<>(request.containsKey("scope") ?
-				(Collection<String>) request.get("scope") : Collections.<String>emptySet());
+				(Collection<String>) request.get("scope") : Collections.emptySet());
 
 		return new OAuth2Request(null, clientId, null, true, new HashSet<>(scope),
 				null, null, null, null);
 	}
 
+	/**
+	 *  Stub method. Originally must generate OAuth2AccessToken according to provided accessToken.
+	 *  @param accessToken - received accessToken to be checked
+	 *  @return OAuth2AccessToken
+	 **/
 	@Override
 	public OAuth2AccessToken readAccessToken(String accessToken) {
 		throw new UnsupportedOperationException("Not supported: read access token");
 	}
 
+	/**
+	 *  Returns Map container that contains body information provided by a request in its body.
+	 *  @param path - String value to where current request has come
+	 *  @param accessToken - provided String value which represents token
+	 *  @return Map container with principal and request data inside
+	 **/
 	@SuppressWarnings({ "unchecked" })
 	private Map<String, Object> getMap(String path, String accessToken) {
 		logger.debug("Getting user info from: " + path);
@@ -125,17 +158,14 @@ public class CustomUserInfoTokenServices implements ResourceServerTokenServices 
 			OAuth2AccessToken existingToken = restTemplate.getOAuth2ClientContext()
 					.getAccessToken();
 			if (existingToken == null || !accessToken.equals(existingToken.getValue())) {
-				DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(
-						accessToken);
+				DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(accessToken);
 				token.setTokenType(tokenType);
 				restTemplate.getOAuth2ClientContext().setAccessToken(token);
 			}
 			return restTemplate.getForEntity(path, Map.class).getBody();
 		} catch (Exception ex) {
-			logger.info("Could not fetch user details: " + ex.getClass() + ", "
-					+ ex.getMessage());
-			return Collections.<String, Object>singletonMap("error",
-					"Could not fetch user details");
+			logger.info("Could not fetch user details: " + ex.getClass() + ", " + ex.getMessage());
+			return Collections.singletonMap("error", "Could not fetch user details");
 		}
 	}
 }

@@ -8,6 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ *  Unit config model entity that contains major information about unit properties.
+ *  ToDo: update docs once model will be updated
+ **/
 @Entity
 @Table(name = "unitConfig")
 public class UnitConfig {
