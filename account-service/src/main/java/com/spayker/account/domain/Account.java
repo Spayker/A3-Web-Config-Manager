@@ -9,6 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+/**
+ *  Account model entity that contains major information about account.
+ *  ToDo: update docs once model will be updated
+ **/
 @Entity
 @Table(name = "account")
 public class Account {
