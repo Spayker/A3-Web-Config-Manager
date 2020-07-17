@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+// ToDo: to be replaced with different config
 @Service
 public class CustomUserDetails implements UserDetailsService {
 

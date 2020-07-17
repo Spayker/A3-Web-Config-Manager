@@ -12,6 +12,9 @@ import org.springframework.util.Assert;
 
 import java.util.Date;
 
+/**
+ *  Service layer implementation to work with Account entities.
+ **/
 @Service
 public class AccountServiceImpl implements AccountService {
 
@@ -23,12 +26,22 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private AccountRepository repository;
 
+	/**
+	 *  Looks for stored account by its name.
+	 *  @param accountName - string value for search
+	 *  @return found Account
+	 **/
 	@Override
 	public Account findByName(String accountName) {
 		Assert.hasLength(accountName);
 		return repository.findByName(accountName);
 	}
 
+	/**
+	 *  Creates new Account and returns it by provided User instance.
+	 *  @param user - instance of User with email and password
+	 *  @return created Account
+	 **/
 	@Override
 	public Account create(User user) {
 
@@ -47,6 +60,11 @@ public class AccountServiceImpl implements AccountService {
 		return account;
 	}
 
+	/**
+	 *  Updates a stored account and returns its updated variant.
+	 *  @param name - String value to search a target account for update
+	 *  @param update - an updated variation of Account that must be persisted
+	 **/
 	@Override
 	public void saveChanges(String name, Account update) {
 

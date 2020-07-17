@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+// ToDo: to be replaced with different config
 public class UserPrincipal implements UserDetails {
 
     private User user;

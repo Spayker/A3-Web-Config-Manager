@@ -20,6 +20,11 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
+/**
+ *  Major web security config class that includes HttpSecurity, AuthenticationManagerBuilder, AuthenticationManager
+ *  configurations.
+ **/
+// ToDo: to be replaced with different config
 @Configuration
 @EnableWebSecurity
 @ComponentScan("com.spayker.auth.config")

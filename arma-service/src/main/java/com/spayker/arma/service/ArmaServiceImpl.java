@@ -12,6 +12,9 @@ import org.springframework.util.Assert;
 
 import java.util.Date;
 
+/**
+ *  Service layer implementation to work with unit config entities.
+ **/
 @Service
 public class ArmaServiceImpl implements ArmaService {
 
@@ -23,12 +26,22 @@ public class ArmaServiceImpl implements ArmaService {
 	@Autowired
 	private ArmaRepository repository;
 
+	/**
+	 *  Looks for stored unit config by its name.
+	 *  @param unitConfig - string value for search
+	 *  @return found Account
+	 **/
 	@Override
-	public UnitConfig findByName(String accountName) {
-		Assert.hasLength(accountName);
-		return repository.findByName(accountName);
+	public UnitConfig findByName(String unitConfig) {
+		Assert.hasLength(unitConfig);
+		return repository.findByName(unitConfig);
 	}
 
+	/**
+	 *  Creates new unit config and returns it by provided User instance.
+	 *  @param user - instance of User with email and password
+	 *  @return created unit config
+	 **/
 	@Override
 	public UnitConfig create(User user) {
 
@@ -46,6 +59,11 @@ public class ArmaServiceImpl implements ArmaService {
 		return unitConfig;
 	}
 
+	/**
+	 *  Updates a stored unit config and returns its updated variant.
+	 *  @param name - String value to search a target unit config for update
+	 *  @param update - an updated variation of unit config that must be persisted
+	 **/
 	@Override
 	public void saveChanges(String name, UnitConfig update) {
 

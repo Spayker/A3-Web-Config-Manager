@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ *  Service layer implementation to work with User entities.
+ **/
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -20,6 +23,10 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository repository;
 
+	/**
+	 *  Creates a new user in db.
+	 *  @param user - object to be persisted
+	 **/
 	@Override
 	public void create(User user) {
 
