@@ -8,6 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+/**
+ *  User entity model is used to keep login, password data for certain user registered in system.
+ *  It contains username (email), encoded password and nothing more.
+ **/
 @Entity
 @Table(name = "users")
 public class User {
