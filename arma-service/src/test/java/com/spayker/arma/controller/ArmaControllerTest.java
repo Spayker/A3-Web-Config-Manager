@@ -56,32 +56,6 @@ public class ArmaControllerTest {
 	}
 
 	@Test
-	public void shouldGetCurrentUnitConfig() throws Exception {
-
-		final UnitConfig unitConfig = new UnitConfig();
-		unitConfig.setName("test");
-
-		when(armaService.findByName(unitConfig.getName())).thenReturn(unitConfig);
-
-		mockMvc.perform(get("/current").principal(new UserPrincipal(unitConfig.getName())))
-				.andExpect(jsonPath("$.name").value(unitConfig.getName()))
-				.andExpect(status().isOk());
-	}
-
-	@Test
-	public void shouldSaveCurrentUnitConfig() throws Exception {
-
-		final UnitConfig unitConfig = new UnitConfig();
-		unitConfig.setName("test");
-		unitConfig.setNote("test note");
-
-		String json = mapper.writeValueAsString(unitConfig);
-
-		mockMvc.perform(put("/current").principal(new UserPrincipal(unitConfig.getName())).contentType(MediaType.APPLICATION_JSON).content(json))
-				.andExpect(status().isOk());
-	}
-
-	@Test
 	public void shouldRegisterNewUnitConfig() throws Exception {
 
 		final User user = new User();
