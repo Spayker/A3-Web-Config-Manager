@@ -58,33 +58,6 @@ public class AccountControllerTest {
 	}
 
 	@Test
-	public void shouldGetCurrentAccount() throws Exception {
-
-		final Account account = new Account();
-		account.setName("test");
-
-		when(accountService.findByName(account.getName())).thenReturn(account);
-
-		mockMvc.perform(get("/current").principal(new UserPrincipal(account.getName())))
-				.andExpect(jsonPath("$.name").value(account.getName()))
-				.andExpect(status().isOk());
-	}
-
-	@Test
-	public void shouldSaveCurrentAccount() throws Exception {
-
-		final Account account = new Account();
-		account.setName("test");
-		account.setNote("test note");
-		account.setLastSeen(new Date());
-
-		String json = mapper.writeValueAsString(account);
-
-		mockMvc.perform(put("/current").principal(new UserPrincipal(account.getName())).contentType(MediaType.APPLICATION_JSON).content(json))
-				.andExpect(status().isOk());
-	}
-
-	@Test
 	public void shouldRegisterNewAccount() throws Exception {
 
 		final User user = new User();
