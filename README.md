@@ -11,7 +11,9 @@ The concept has one purpose: to prove a theory when real world data can change i
 Trello board: https://trello.com/b/xGp7I8bx/a3-web-configurator
 
 ## Description
-Not yet ready
+Current server's concept approximately looks: 
+
+![alt text](resources/diagrams/A3_web_config_server_architecture_mk1.jpg)
 
 ## Technical Stack
 Not yet ready
