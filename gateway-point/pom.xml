@@ -11,7 +11,7 @@
     <name>gateway-point</name>
 
     <parent>
-        <groupId>com.spayker</groupId>
+        <groupId>com.a3wcm</groupId>
         <artifactId>mservicet</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
