@@ -2,13 +2,21 @@ package com.a3wcm.account.controller;
 
 import com.a3wcm.account.domain.Account;
 import com.a3wcm.account.domain.User;
+import com.a3wcm.account.dto.AccountDto;
+import com.a3wcm.account.dto.mapper.AccountMapper;
 import com.a3wcm.account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.validation.Valid;
-import java.security.Principal;
+import java.util.List;
 
 /**
  *  A controller layer with all needed (for now) methods.
@@ -21,15 +29,18 @@ public class AccountController {
 	@Autowired
 	private AccountService accountService;
 
+	@Autowired
+	private AccountMapper accountMapper;
+
 	/**
 	 *  Returns an Account instance found by name.
 	 *  @param name Strign value to make search by name possible
 	 *  @return found Account entity
 	 **/
-	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
+	@PreAuthorize("#oauth2.hasScope('server')")
 	@RequestMapping(path = "/{name}", method = RequestMethod.GET)
-	public Account getAccountByName(@PathVariable String name) {
-		return accountService.findByName(name);
+	public ResponseEntity<List<Account>> getAccountByName(@PathVariable String name) {
+		return new ResponseEntity<>(accountService.findAccountByName(name), HttpStatus.OK);
 	}
 
 	/**
@@ -39,7 +50,9 @@ public class AccountController {
 	 *  @return
 	 **/
 	@RequestMapping(path = "/", method = RequestMethod.POST)
-	public Account createNewAccount(@Valid @RequestBody User user) {
-		return accountService.create(user);
+	public ResponseEntity<Account> createNewAccount(@Valid @RequestBody AccountDto accountDto) {
+		Account account = accountMapper.accountDtoToAccount(accountDto);
+		User user = accountMapper.accountDtoToUser(accountDto);
+		return new ResponseEntity<>(accountService.create(account, user), HttpStatus.CREATED);
 	}
 }
