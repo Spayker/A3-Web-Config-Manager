@@ -1,6 +1,6 @@
-package com.a3wcm.arma.config;
+package com.a3wcm.config;
 
-import com.a3wcm.arma.service.security.CustomUserInfoTokenServices;
+import com.a3wcm.service.security.CustomUserInfoTokenServices;
 import feign.RequestInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;

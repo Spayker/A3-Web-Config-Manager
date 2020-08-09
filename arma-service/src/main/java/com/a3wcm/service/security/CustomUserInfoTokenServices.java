@@ -1,4 +1,4 @@
-package com.a3wcm.arma.service.security;
+package com.a3wcm.service.security;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

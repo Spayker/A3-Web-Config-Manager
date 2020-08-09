@@ -1,4 +1,4 @@
-package com.a3wcm.arma.domain;
+package com.a3wcm.domain;
 
 import org.hibernate.validator.constraints.Length;
 
