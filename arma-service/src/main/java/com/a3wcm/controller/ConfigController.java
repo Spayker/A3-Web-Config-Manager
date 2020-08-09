@@ -1,6 +1,8 @@
 package com.a3wcm.controller;
 
 import com.a3wcm.domain.Config;
+import com.a3wcm.dto.ConfigDto;
+import com.a3wcm.dto.mapper.ConfigMapper;
 import com.a3wcm.service.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,6 +29,9 @@ public class ConfigController {
 	@Autowired
 	private ConfigService configService;
 
+	@Autowired
+	private ConfigMapper configMapper;
+
 	@PreAuthorize("#oauth2.hasScope('server')")
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Config> getConfigById(@PathVariable Long id) {
@@ -38,7 +43,8 @@ public class ConfigController {
 	}
 
 	@RequestMapping(path = "/", method = RequestMethod.POST)
-	public ResponseEntity<Config> createConfig(@Valid @RequestBody Config config) {
+	public ResponseEntity<Config> createConfig(@Valid @RequestBody ConfigDto configDto) {
+		Config config = configMapper.configDtoToConfig(configDto);
 		return new ResponseEntity<>(configService.create(config), HttpStatus.CREATED);
 	}
 
