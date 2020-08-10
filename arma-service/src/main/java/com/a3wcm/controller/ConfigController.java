@@ -36,10 +36,8 @@ public class ConfigController {
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Config> getConfigById(@PathVariable Long id) {
 		Optional<Config> foundConfig = configService.findConfigById(id);
-		if(foundConfig.isPresent()){
-			return new ResponseEntity<>(foundConfig.get(), HttpStatus.OK);
-		}
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return foundConfig.map(config -> new ResponseEntity<>(config, HttpStatus.OK))
+				.orElseGet(() -> new ResponseEntity<>(null, HttpStatus.OK));
 	}
 
 	@RequestMapping(path = "/", method = RequestMethod.POST)
