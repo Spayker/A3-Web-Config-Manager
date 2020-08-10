@@ -1,6 +1,7 @@
 package com.a3wcm.service;
 
 import com.a3wcm.domain.Config;
+import com.a3wcm.domain.ConfigType;
 import com.a3wcm.exception.ConfigException;
 import com.a3wcm.repository.ConfigRepository;
 import org.slf4j.Logger;
@@ -42,7 +43,7 @@ public class ConfigServiceImpl implements ConfigService {
 		if(type.isEmpty() || type.isBlank()){
 			throw new IllegalArgumentException("Provided config type can't be empty or blank");
 		}
-		return repository.findByType(type);
+		return repository.findByType(ConfigType.getTypeByValue(type));
 	}
 
 	@Override

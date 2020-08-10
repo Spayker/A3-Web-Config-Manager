@@ -5,7 +5,6 @@ import com.a3wcm.domain.Config;
 import com.a3wcm.dto.mapper.ConfigMapper;
 import com.a3wcm.repository.ConfigRepository;
 import com.a3wcm.util.factory.ConfigFactory;
-import org.apache.commons.lang.RandomStringUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,11 +15,9 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.security.core.userdetails.User;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Stream;
 
 import static com.a3wcm.domain.ConfigType.INFANTRY;
@@ -256,7 +253,7 @@ public class ConfigServiceTest {
 
         // when
         when(repository.findByType(config.getType())).thenReturn(List.of(savedConfig));
-        List<Config> foundConfigs = configService.findConfigByType(config.getType());
+        List<Config> foundConfigs = configService.findConfigByType(config.getType().getValue());
 
         assertNotNull(foundConfigs);
         assertEquals(expectedFoundConfigs, foundConfigs.size());

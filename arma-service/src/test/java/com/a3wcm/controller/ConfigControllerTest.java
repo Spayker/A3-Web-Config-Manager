@@ -72,7 +72,7 @@ public class ConfigControllerTest {
                 .andExpect(jsonPath("$.id").value(config.getId()))
                 .andExpect(jsonPath("$.name").value(config.getName()))
                 .andExpect(jsonPath("$.note").value(config.getNote()))
-                .andExpect(jsonPath("$.type").value(config.getType()))
+                .andExpect(jsonPath("$.type").value(config.getType().toString()))
                 .andExpect(jsonPath("$.createdDate").value(config.getCreatedDate()))
                 .andExpect(jsonPath("$.modifiedDate").value(config.getModifiedDate()))
                 .andExpect(status().isOk());
@@ -91,7 +91,7 @@ public class ConfigControllerTest {
                 .andExpect(jsonPath("$.id").value(config.getId()))
                 .andExpect(jsonPath("$.name").value(config.getName()))
                 .andExpect(jsonPath("$.note").value(config.getNote()))
-                .andExpect(jsonPath("$.type").value(config.getType()))
+                .andExpect(jsonPath("$.type").value(config.getType().toString()))
                 .andExpect(jsonPath("$.createdDate").value(config.getCreatedDate()))
                 .andExpect(jsonPath("$.modifiedDate").value(config.getModifiedDate()))
                 .andExpect(status().isCreated());

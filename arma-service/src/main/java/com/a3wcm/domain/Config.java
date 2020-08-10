@@ -47,8 +47,4 @@ public class Config {
 
 	private Date modifiedDate;
 
-	public String getType(){
-		return type.getValue();
-	}
-
 }

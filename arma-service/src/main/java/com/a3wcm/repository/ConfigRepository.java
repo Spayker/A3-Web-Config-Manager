@@ -1,6 +1,7 @@
 package com.a3wcm.repository;
 
 import com.a3wcm.domain.Config;
+import com.a3wcm.domain.ConfigType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -23,7 +24,7 @@ public interface ConfigRepository extends JpaRepository<Config, Long> {
 	 *  Looks for config by provided type.
 	 *  @param type - string value of type to used in search
 	 **/
-	List<Config> findByType(String type);
+	List<Config> findByType(ConfigType type);
 
 	/**
 	 *  Looks for config by provided note.

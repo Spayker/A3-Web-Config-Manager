@@ -10,12 +10,23 @@ public enum ConfigType {
     PRIMARY_WEAPON("primaryWeapon"),
     SECONDARY_WEAPoN("secondaryWeapon"),
     AMMO("ammo"),
-    STRUCTURE("structure");
+    STRUCTURE("structure"),
+    UNKNOWN("unkbowb");
 
     private final String value;
 
     ConfigType(String value) {
         this.value = value;
+    }
+
+    public static ConfigType getTypeByValue(String value){
+        ConfigType[] values = ConfigType.values();
+        for(int i = 0; i != values.length; i++){
+            if(values[i].getValue().equals(value)){
+                return values[i];
+            }
+        }
+        return UNKNOWN;
     }
 
     public String getValue() {
