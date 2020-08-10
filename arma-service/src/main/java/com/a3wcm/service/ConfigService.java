@@ -1,6 +1,8 @@
 package com.a3wcm.service;
 
 import com.a3wcm.domain.Config;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,6 +40,20 @@ public interface ConfigService {
 	List<Config> findConfigByNote(String note);
 
 	/**
+	 *  Looks for config by provided created date instance
+	 *  @param createdDate - instance of util.Date that represents date and time when config was created
+	 *  @return instance of found config
+	 **/
+	Config findConfigByCreatedDate(Date createdDate);
+
+	/**
+	 *  Looks for config by provided modified date
+	 *  @param modifiedDate - instance of util.Date that represents date and time when config was modified last time
+	 *  @return list of found Config instances
+	 **/
+	List<Config> findByModifiedDate(Date modifiedDate);
+
+	/**
 	 *  Creates new Account and returns it by provided User instance.
 	 *  @param config - instance of Config to be persisted
 	 *  @return created Account
@@ -49,4 +65,5 @@ public interface ConfigService {
 	 *  @param update - an updated variation of Account that must be persisted
 	 **/
 	Config saveChanges(Config update);
+
 }

@@ -41,6 +41,6 @@ public interface ConfigRepository extends JpaRepository<Config, Long> {
 	 *  Looks for config by provided note.
 	 *  @param modifiedDate - instance of util.Date that represents date and time when config was modified last time
 	 **/
-	Config findByModifiedDate(Date modifiedDate);
+	List<Config> findByModifiedDate(Date modifiedDate);
 
 }

@@ -54,6 +54,16 @@ public class ConfigServiceImpl implements ConfigService {
 	}
 
 	@Override
+	public Config findConfigByCreatedDate(Date createdDate) {
+		return repository.findByCreatedDate(createdDate);
+	}
+
+	@Override
+	public List<Config> findByModifiedDate(Date modifiedDate) {
+		return repository.findByModifiedDate(modifiedDate);
+	}
+
+	@Override
 	public Config create(Config config) {
 		config.setCreatedDate(new Date());
 		Config savedConfig = repository.saveAndFlush(config);
