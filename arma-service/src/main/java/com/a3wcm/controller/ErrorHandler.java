@@ -1,4 +1,4 @@
-package com.a3wcm.arma.controller;
+package com.a3wcm.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

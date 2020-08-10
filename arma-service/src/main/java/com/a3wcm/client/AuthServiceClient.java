@@ -1,6 +1,6 @@
-package com.a3wcm.arma.client;
+package com.a3wcm.client;
 
-import com.a3wcm.arma.domain.User;
+import com.a3wcm.domain.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;

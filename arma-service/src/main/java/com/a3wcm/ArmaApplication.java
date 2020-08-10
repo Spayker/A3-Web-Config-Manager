@@ -1,4 +1,4 @@
-package com.a3wcm.arma;
+package com.a3wcm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
