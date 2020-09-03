@@ -122,11 +122,14 @@ services:
         max-file: "10"
 
   arma-mysqld:
+    command: --init-file /data/application/arma_init.sql
+    volumes:
+      - ./mysqld/arma_init.sql:/data/application/arma_init.sql
     environment:
       MYSQL_DATABASE: armaDB
       MYSQL_ROOT_PASSWORD: qwerty
     image: mservicet-mysqld
-    restart: always
+    restart: on-failure
     logging:
       options:
         max-size: "10m"
