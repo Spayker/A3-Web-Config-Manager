@@ -9,6 +9,8 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,6 +43,7 @@ public class Config {
 	@Length(min = 0, max = 20_000)
 	private String note;
 
+	@Enumerated(EnumType.STRING)
 	private ConfigType type;
 
 	private Date createdDate;

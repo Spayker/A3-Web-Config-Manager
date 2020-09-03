@@ -11,7 +11,7 @@ public enum ConfigType {
     SECONDARY_WEAPoN("secondaryWeapon"),
     AMMO("ammo"),
     STRUCTURE("structure"),
-    UNKNOWN("unkbowb");
+    UNKNOWN("unknown");
 
     private final String value;
 
