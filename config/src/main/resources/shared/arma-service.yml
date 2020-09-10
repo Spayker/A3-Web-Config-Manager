@@ -36,5 +36,5 @@ spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
 server:
   servlet:
-    context-path: /arma-configs
+    context-path: /arma
   port: ${ARMA_SERVICE_DEV_PORT}

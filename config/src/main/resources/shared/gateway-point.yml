@@ -30,13 +30,13 @@ zuul:
       sensitiveHeaders:
 
     arma-service-configs:
-      path: /v1/configs/**
+      path: /arma/v1/configs/**
       serviceId: arma-service
       stripPrefix: false
       sensitiveHeaders:
 
     arma-service-events:
-      path: /v1/events/**
+      path: /arma/v1/events/**
       serviceId: arma-service
       stripPrefix: false
       sensitiveHeaders:
